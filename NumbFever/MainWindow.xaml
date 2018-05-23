@@ -1,0 +1,35 @@
+﻿<Window x:Class="NumbFever.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumbFever"
+        mc:Ignorable="d"
+        Title="NumbFever - Főmenü" Height="550" Width="800" ResizeMode="NoResize" Style="{StaticResource GreyBg}">
+    <Grid Height="500px"  VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="NumbFever" VerticalAlignment="Top" Height="47" Width="277" FontSize="48" FontFamily="Arial Rounded MT Bold" TextDecorations="{x:Null}" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="287,32,0,0" TextWrapping="Wrap" Text="- Számlázás okosan!" VerticalAlignment="Top" Height="27" Width="245" FontSize="22"/>
+        <Image HorizontalAlignment="Left" Height="155" Margin="581,32,0,0" VerticalAlignment="Top" Width="178" Source="Img/main_img.png" RenderTransformOrigin="1.184,0.387"/>
+
+        <Grid  Height="100" Margin="10,312,10,88">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource MaintBtn}" x:Name="NewInvoiceBtn" Grid.Column="0" Content="Új számla" Width="100" Height="50" Click="NewInvoiceBtn_Click" />
+            <Button Style="{StaticResource MaintBtn}" x:Name="InvoiceListBtn" Grid.Column="1" Content="Meglévő tételek" Width="100" Height="50" Click="InvoiceListBtn_Click" />
+            <Button Style="{StaticResource MaintBtn}" x:Name="PartnersBtn" Grid.Column="2" Content="Partnerek" Width="100" Height="50" Click="PartnersBtn_Click" />
+            <Button Style="{StaticResource MaintBtn}" x:Name="SettingsBtn" Grid.Column="3" Content="Beállítások" Width="100" Height="50" Click="SettingsBtn_Click" />
+            <Button Style="{StaticResource MaintBtn}" x:Name="ExitBtn" Grid.Column="4" Content="Kilépés" Width="100" Height="50" Click="ExitBtn_Click" />
+            <Grid Margin="-12,104,-13,-85" Grid.ColumnSpan="5">
+                <TextBlock Text="©2018 NumbFever. All contents are copyright of their authors." TextDecorations="{x:Null}" FontStyle="Italic" TextAlignment="Center" Margin="0,68,0,-17" />
+            </Grid>
+        </Grid>
+        <Calendar HorizontalAlignment="Left" Margin="34,103,0,0" VerticalAlignment="Top"/>
+        <Image Margin="287,84,266,211" Source="Img/Image3.png" Stretch="Fill"/>
+
+    </Grid>
+</Window>
