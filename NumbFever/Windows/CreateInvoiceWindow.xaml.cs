@@ -106,24 +106,26 @@ namespace NumbFever.Windows
             long n = long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
             Partner selectedPartner = PartnerNames.SelectedItem as Partner;
             string date = n.ToString();
-            using (FileStream file = File.Open($"{PartnerNames.SelectedItem.ToString()}\\{PartnerNames.SelectedItem.ToString().Replace(".", "")}{date}.txt", FileMode.Create))
+            string path = $"{PartnerNames.SelectedItem.ToString()}\\{PartnerNames.SelectedItem.ToString().Replace(".", "")}{date}";
+            using (FileStream file = File.Open(path+".txt", FileMode.Create))
             {
                 List<string> datas = new List<string>();
-                datas.Add(string.Format("E-számla{0,85}{1}", "", InfoHandler.ownCompany.Name));
+                
+                datas.Add(string.Format("E-szamla{0,85}{1}", "", InfoHandler.ownCompany.Name));
                 datas.Add(string.Format("{0,60} {1,40}", "", InfoHandler.ownCompany.Address));
-                datas.Add(string.Format("{0,60} {1,-15}{2,-30}", "", "Adószám:", InfoHandler.ownCompany.TaxNumber));
-                datas.Add(string.Format("{0,60} {1,-15}{2,-30}", "", "Bankszámlaszám:", InfoHandler.ownCompany.AccountNumber));
+                datas.Add(string.Format("{0,60} {1,-15}{2,-30}", "", "Adoszam:", InfoHandler.ownCompany.TaxNumber));
+                datas.Add(string.Format("{0,60} {1,-15}{2,-30}", "", "Bankszamlaszam:", InfoHandler.ownCompany.AccountNumber));
                 datas.Add(drawLine());
-                datas.Add("Vevő adatai: ");
-                datas.Add(selectedPartner.Name);
-                datas.Add(selectedPartner.Address);
-                datas.Add("Számlaszám: " + selectedPartner.BankAccountNumber);
-                datas.Add("Számla kelte: " + DateTime.Now.ToString("yyyy.MM.dd"));
-                datas.Add("Teljesítés időpontja: " + ((DateTime)DateOfDeliveryBox.SelectedDate).ToString("yyyy.MM.dd"));
-                datas.Add("Fizetési határidő :" + ((DateTime)TermOfPaymentBox.SelectedDate).ToString("yyyy.MM.dd"));
-                datas.Add("Számla száma: " + n);
+                datas.Add("Vevo adatai: ");
+                datas.Add("Vevo neve:" + selectedPartner.Name);
+                datas.Add("Vevo címe:" + selectedPartner.Address);
+                datas.Add("Szamlaszam: " + selectedPartner.BankAccountNumber);
+                datas.Add("Szamla kelte: " + DateTime.Now.ToString("yyyy.MM.dd"));
+                datas.Add("Teljesites idopontja: " + ((DateTime)DateOfDeliveryBox.SelectedDate).ToString("yyyy.MM.dd"));
+                datas.Add("Fizetesi hatarido: " + ((DateTime)TermOfPaymentBox.SelectedDate).ToString("yyyy.MM.dd"));
+                datas.Add("Szamla szama: " + n);
                 datas.Add(drawLine());
-                string header = string.Format("{0}{1,15}{2,15}{3,15}{4,15}{5,15}{6,15}{7,15}", "Megnevezés", "Pénznem" , "Egységár", "Mennyiség", "Nettó ár", "ÁFA%","ÁFA", "Bruttó ár");
+                string header = string.Format("{0}{1,15}{2,15}{3,15}{4,15}{5,15}{6,15}{7,15}", "Megnevezes", "Penznem" , "Egysegar", "Mennyiseg", "Netto ar", "AFA%","AFA", "Brutto ar");
                 datas.Add(header);
                 double finalPrice = 0;
                 string currency = ItemHandler.GetItems()[0].Currency;
@@ -136,10 +138,13 @@ namespace NumbFever.Windows
                 datas.Add(drawLine());
 
 
-                datas.Add(string.Format("Fizetendő:{0,60} {1}.", finalPrice,currency));
-                
+                datas.Add(string.Format("Fizetendo:{0,60} {1}.", finalPrice,currency));
                 
                 string[] dataArray = datas.ToArray();
+                for (int i = 0; i < dataArray.Length;i++)
+                {
+                    dataArray[i] = CharacterReplacer.replaceAccentuatedLetters(dataArray[i]);
+                }
                 using (StreamWriter writer = new StreamWriter(file))
                 {
                     int counter = 0;
@@ -158,6 +163,7 @@ namespace NumbFever.Windows
                         counter++;
                     }
                 }
+                PdfConverter.GeneratePdf(path);
             }
             MessageBox.Show("Sikeres mentés!", "Mentve", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();

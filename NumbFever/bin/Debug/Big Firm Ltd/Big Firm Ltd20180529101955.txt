@@ -1,0 +1,60 @@
+E-szamla                                                                                     OwnCompany Bt.
+
+
+
+
+
+                                                                 1124 Budapest Kossuth Lajos utca 67.
+
+
+                                                             Adoszam:       1313131-1-12                  
+
+
+                                                             Bankszamlaszam:15643456-13776566-00000000    
+
+
+
+
+
+______________________________________________________________________________________________________________
+
+
+Vevo adatai: 
+
+
+Vevo neve:Big Firm Ltd.
+
+
+Vevo cime:1222 Budapest Fehervari ut 132.
+
+
+Szamlaszam: 46353255-2345235-3535544
+
+
+Szamla kelte: 2018.05.29
+
+
+Teljesites idopontja: 2018.05.29
+
+
+Fizetesi hatarido: 2018.05.29
+
+
+Szamla szama: 20180529101955
+
+
+______________________________________________________________________________________________________________
+
+
+Megnevezes        Penznem       Egysegar      Mennyiseg       Netto ar           AFA%            AFA      Brutto ar
+
+
+teszt            HUF            100              1            100              5              5            105
+
+
+______________________________________________________________________________________________________________
+
+
+Fizetendo:                                                         105 HUF.
+
+

@@ -89,7 +89,7 @@ namespace NumbFever.Classes
             string[] directories = Directory.GetDirectories(path);
             foreach (var item in directories)
             {
-                if (item != path+"\\Settings")
+                if (item != path+"\\Settings" && item != path+"\\de")
                 {
                     string[] partnerInfos = new string[8];
                     string dirName = item.Substring(item.LastIndexOf("\\"));

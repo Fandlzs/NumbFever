@@ -34,8 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\CharacterReplacer.cs" />
     <Compile Include="Classes\InfoHandler.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemHandler.cs" />
@@ -62,6 +70,8 @@
     <Compile Include="Classes\Partner.cs" />
     <Compile Include="Classes\PartnerHandler.cs" />
     <Compile Include="Classes\PartnerValidator.cs" />
+    <Compile Include="Classes\PdfConverter.cs" />
+    <Compile Include="Classes\PdfWriter.cs" />
     <Compile Include="Classes\TaxRate.cs" />
     <Compile Include="Classes\Validator.cs" />
     <Compile Include="Windows\CreateInvoiceWindow.xaml.cs">

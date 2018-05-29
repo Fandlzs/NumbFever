@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Vivi\source\repos\NumbFever\NumbFever\obj\Debug\
+C:\Users\Vivi\source\NF\NumbFever\obj\Debug\
 NumbFever
 none
 false
 DEBUG;TRACE
-C:\Users\Vivi\source\repos\NumbFever\NumbFever\App.xaml
+C:\Users\Vivi\source\NF\NumbFever\App.xaml
 71192990007
 
-26-1746623626
-131569487696
+291487466805
+16-574733425
 MainWindow.xaml;Windows\CreateInvoiceWindow.xaml;Windows\CreatePartnerWindow.xaml;Windows\EditPartnerWindow.xaml;Windows\InvoiceSearchWindow.xaml;Windows\PartnersWindow.xaml;Windows\SettingsWindow.xaml;
 
-True
+False
 
